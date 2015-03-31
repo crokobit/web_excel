@@ -1,0 +1,7 @@
+axlsx = Axlsx::Package.new
+axlsx.workbook.add_worksheet(name: "Table") do |sheet|
+  sheet.add_row ["customer", "terms", "limit", "total", "current", "1 to 15", "16 to 30", "31 to 60", "over 60"]
+  @datas.each do |data|
+    sheet.add_row [data.customer, data.terms, data.limit, data.total, data.current, data.one_to_fifteen, data.sixteen_to_thirty, data.thirty_one_to_sixty, data.over_sixty]
+  end
+end
